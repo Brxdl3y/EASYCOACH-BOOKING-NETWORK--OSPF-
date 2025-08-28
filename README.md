@@ -1,6 +1,7 @@
 EasyCoach Bus Station - Enterprise Network Topology (OSPF)
 
  📌 Project Overview
+ 
 This project simulates the **EasyCoach Bus Booking System enterprise network**, connecting multiple regional offices across Kenya (Mombasa, Nakuru, Kisumu, and Nairobi HQ).  
 
 The aim of this project is to model a **scalable, secure, and efficient enterprise network**, applying best practices that would be used in real-world corporate environments.
@@ -68,7 +69,8 @@ The solution incorporates:
 Author
 
 BRADLEY GIOVANNI
+
 Aspiring Network Engineer | CCNA Student | Passionate about Enterprise Networking & Cloud Integration
-📧 [giovanniibradley@gmail.com
-] | 🌐 [[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/bradley-giovanniii293)
+📧 [giovanniibradley@gmail.com] 
+| 🌐 [[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/bradley-giovanniii293)
   
