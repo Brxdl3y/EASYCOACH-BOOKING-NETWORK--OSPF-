@@ -1,0 +1,181 @@
+==============================
+ EASYCOACH NETWORK CONFIGS
+==============================
+# Project: EASYCOACH BUS NETWORK TOPOLOGY
+# Author: BRADLEY GIOVANNI
+# Focus: OSPFv2, MD5 Authentication, Passive Interfaces, ISP Connectivity
+==============================
+
+-------------------------------------------------
+ ISP ROUTER (SEACOM-ISP1)
+-------------------------------------------------
+hostname SEACOM-ISP
+enable secret <CCNA>>
+
+interface g0/0/0
+ ip address 203.0.113.2 255.255.255.252
+ no shutdown
+
+! Default route for testing
+ip route 0.0.0.0 0.0.0.0 null0
+
+-------------------------------------------------
+ MOMBASA BRANCH (R1)
+-------------------------------------------------
+hostname MBSA-EDGE-R1
+enable secret <CCNA>>
+
+
+interface g0/0
+ ip address 10.0.13.1 255.255.255.252
+ no shutdown
+
+interface g0/1
+ ip address 10.0.12.1 255.255.255.252
+ no shutdown
+
+interface g0/2
+ ip address 203.0.113.1 255.255.255.252
+ no shutdown
+
+interface loopback0
+ ip address 1.1.1.1 255.255.255.255
+
+router ospf 1
+ router-id 1.1.1.1
+ passive-interface Loopback0
+ network 10.0.12.0 0.0.0.3 area 0
+ network 10.0.13.0 0.0.0.3 area 0
+ network 1.1.1.1 0.0.0.0 area 0
+ passive-interface g0/2
+ 
+
+! Default route towards ISP
+ip route 0.0.0.0 0.0.0.0 203.0.113.2
+
+-------------------------------------------------
+ NAKURU BRANCH (R2)
+-------------------------------------------------
+hostname NAKURU-DC-R2
+enable secret <CCNA>
+
+interface g0/0/0
+ ip address 10.0.24.1 255.255.255.252
+ no shutdown
+
+interface g0/0/1
+ ip address 10.0.12.2 255.255.255.252
+ no shutdown
+
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+
+router ospf 3
+ router-id 2.2.2.2
+passive-interface Loopback0
+ auto-cost reference-bandwidth 100000
+ network 10.0.0.0 0.0.0.255 area 0
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.0.24.0 0.0.0.3 area 0
+ network 10.0.12.0 0.0.0.3 area 0
+
+
+
+-------------------------------------------------
+ KISUMU BRANCH (R3)
+-------------------------------------------------
+hostname Kisumu-R3
+enable secret <CCNA>
+
+
+interface g0/0/0
+ ip address 10.0.34.1 255.255.255.252
+ no shutdown
+
+interface g0/0/1
+ ip address 10.0.13.2 255.255.255.252
+ no shutdown
+
+interface loopback0
+ ip address 3.3.3.3 255.255.255.255
+
+router ospf 3
+ router-id 3.3.3.3
+passive-interface Loopback0
+ auto-cost reference-bandwidth 100000
+ network 10.0.13.0 0.0.0.0 area 0
+ network 10.0.34.0 0.0.0.3 area 0
+ network 3.3.3.3 0.0.0.0 area 0
+
+
+
+-------------------------------------------------
+ NAIROBI HQ (R4)
+-------------------------------------------------
+hostname NBI-CORE-R4
+enable secret <CCNA>
+
+interface g0/0
+ ip address 10.0.34.2 255.255.255.252
+ no shutdown
+
+interface g0/1
+ ip address 192.168.4.254 255.255.255.0
+ no shutdown
+
+interface g0/2
+ ip address 10.0.24.2 255.255.255.252
+ no shutdown
+
+interface loopback0
+ ip address 4.4.4.4 255.255.255.255
+
+router ospf 1
+ router-id 4.4.4.4
+ network 10.0.0.0 0.255.255.255 area 0
+ passive-interface Loopback0
+ auto-cost reference-bandwidth 100000
+ network 0.0.0.0 255.255.255.255 area 0
+ passive-interface g0/1
+ 
+
+
+-------------------------------------------------
+ HQ SWITCH (SW1)
+-------------------------------------------------
+hostname HQ-ACCESS-SW1
+enable secret <CCNA>
+
+interface fa0/1
+ switchport mode access
+ switchport access vlan 1
+interface Vlan1
+ ip address 192.168.4.2 255.255.255.0
+ exit
+ duplex half
+ speed 100
+no shutdown
+
+
+vlan 10
+ name HQ-LAN
+
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 10
+ interface Vlan10
+ ip address 192.168.4.5 255.255.255.0
+ exit
+ duplex half
+ speed 100
+no shutdown
+
+
+-------------------------------------------------
+ HQ PC (PC0)
+-------------------------------------------------
+IP Address: 192.168.4.1
+Subnet Mask: 255.255.255.0
+Default Gateway: 192.168.4.254
+DNS: 8.8.8.8
