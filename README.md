@@ -1,6 +1,6 @@
-EasyCoach Bus Station - Enterprise Network Topology (OSPF)
+**EasyCoach Bus Station - Enterprise Network Topology (OSPF)**
 
- 📌 Project Overview
+ 📌 **Project Overview**
  
 This project simulates the **EasyCoach Bus Booking System enterprise network**, connecting multiple regional offices across Kenya (Mombasa, Nakuru, Kisumu, and Nairobi HQ).  
 
