@@ -17,7 +17,7 @@ The solution incorporates:
 - **High availability** using redundant WAN links
 
 
-🎯 Key Features
+ **Key Features**
 - **Dynamic Routing (OSPFv2):**  
   Configured across all routers with MD5 authentication for secure neighbor adjacencies.
   
@@ -38,7 +38,7 @@ The solution incorporates:
   SEACOM (ISP) provides external connectivity for future cloud services or intercity bookings.
 
 
-   Technologies & Tools
+   **Technologies & Tools**
 - **Cisco Routers:** ISR 4321, 2911
 
 - **Cisco Switches:** Catalyst 2960
@@ -52,10 +52,10 @@ The solution incorporates:
   - Static Default Routes (towards ISP)  
 
   - Loopback Interfaces (Simulated Servers)  
-  - Passive Interfaces  
+  - Passive Interfaces
   - Subnetting for WAN & LAN links  
 
- Skills Demonstrated
+ **Skills Demonstrated**
 
  This project demonstrates my ability to **design, configure, and secure enterprise-grade networks** — skills directly applicable to **Network Engineering, Systems Administration, and IT Infrastructure roles**.
 
@@ -66,11 +66,11 @@ The solution incorporates:
 ✅ Security (Passive Interfaces, Authentication)  
 ✅ Documentation & Network Presentation  
 
-Author
-
-BRADLEY GIOVANNI
+Author - **BRADLEY GIOVANNI**
 
 Aspiring Network Engineer | CCNA Student | Passionate about Enterprise Networking & Cloud Integration
-📧 [giovanniibradley@gmail.com] 
+
+EMAIL - **[giovanniibradley@gmail.com]**
+
 | 🌐 [[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/bradley-giovanniii293)
   
